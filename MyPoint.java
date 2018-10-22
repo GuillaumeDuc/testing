@@ -1,4 +1,3 @@
-package main.fr.ut2j.m1ice.ootesting;
 
 import java.util.Random;
 
@@ -39,9 +38,17 @@ public class MyPoint {
 	 * Creates a point from a IMyPoint.
 	 * (0,0) will be used when the given pt is null.
 	 * @param pt The IMyPoint, if null the default value (0,0) will be used.
+	 * @return 
 	 */
 	public MyPoint(final MyPoint pt) {
-		this(pt.x, pt.y);
+		if (!(pt == null)) {
+			this.x = pt.x;
+			this.y = pt.y;
+		}
+		else {
+			this.x = 0d;
+			this.y = 0d;
+		}
 	}
 
 
@@ -50,7 +57,9 @@ public class MyPoint {
 	 * @param newX The new X coordinate. Must be valid (not equal Double.NaN), otherwise nothing is done.
 	 */
 	public void setX(final double newX) {
-		x = newX;
+		if(!(Double.isNaN(newX))) {
+			x = newX;
+		}
 	}
 
 
@@ -59,7 +68,9 @@ public class MyPoint {
 	 * @param newY The new Y coordinate. Must be valid (not equal Double.NaN), otherwise nothing is done.
 	 */
 	public void setY(final double newY) {
-		x = newY;
+		if(!(Double.isNaN(newY))) {
+			y = newY;
+		}
 	}
 
 
@@ -108,6 +119,9 @@ public class MyPoint {
 	 * @return The angle or NaN if the given point null.
 	 */
 	public double computeAngle(final MyPoint pt) {
+		if (pt == null) {
+			return Double.NaN;
+		}
 		double angle;
 		final double x2 = pt.getX() - x;
 		final double y2 = pt.getY() - y;
@@ -121,7 +135,6 @@ public class MyPoint {
 		}else {
 			angle = x2 < 0d ? Math.PI - atan(-y2 / x2) : atan(y2 / x2);
 		}
-
 		return angle;
 	}
 
@@ -200,8 +213,10 @@ public class MyPoint {
 	 * @param ty The Y translation.
 	 */
 	public void translate(final double tx, final double ty) {
-		setX(x + tx);
-		setY(y + ty);
+		if (!(tx == Double.NaN) || !(ty == Double.NaN)) {
+			setX(x + tx);
+			setY(y + ty);
+		}
 	}
 
 
