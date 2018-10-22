@@ -14,7 +14,6 @@ Master 1 ICE, GLa - V&V - Labs ([course materials](http://combemale.fr/teaching/
     ...
 
 > Q.1b Le test de ces constructeurs utilisent les opérations getX et getY. Ne trouvez-vous pas cela étrange qu’un test utilise d’autres opérations ? Que faire ?
-> Il faut tester les autres opérations (get et set).
 
 > Q.1c Testez les accesseurs en lecture et écriture (les opérations get et set). Tout d’abord, testez getX et setX ensemble (car elles sont liées, idem pour y). Ensuite créez d’autres tests pour tester les opérations set avec la valeur Double.NaN (cf. la javadoc de ces opérations).
 
@@ -29,7 +28,6 @@ Master 1 ICE, GLa - V&V - Labs ([course materials](http://combemale.fr/teaching/
 > Q.2a Utilisez l’outil de couverture de code fourni dans Eclipse (ou autre IDE) pour identifier les chemins dans le code non couvert par vos tests. Rajoutez quelques tests si besoins (n’y passez pas trop de temps).
 
 > Q.2b Est-ce que votre code est sûr lorsque toutes les instructions sont couvertes par au moins un test ?
-> Il est plus sûr mais pas 100% sûr.
 
 > Q.2c Ajoutez le test unitaire suivant et exécutez-le. S’il passe, bien joué. Dans tout les cas cela peut certainement vous aidez à répondre à la question précédente.
 
@@ -44,7 +42,6 @@ Cet exercice est une brève introduction au principe du mock.
 L’opération setPoint(Random r1, Random r2) définit les coordonnées d’un point de manière aléatoire (x avec r1, et y avec r2).
 
 > Q.3a Expliquez en quoi il est impossible de tester en l’état cette opération.
-> Il est impossible de la tester en l'état puisque on ne pourrait pas savoir à quoi équivaudrait un random avec assert, puisqu'il change à chaque run.
 >
 > > On veut donc utiliser le principe du Mock pour tester cette opération.
 
@@ -65,3 +62,8 @@ Avec Easymock : voir la refcard et les slides du cours.
 2. répondez aux questions (dans un nouveau fichier Markdown ou directement dans README.md), dans lequel vous préciserez également les noms du binome.
 3. rajoutez vos tests, modifications de la classe sous test, etc.
 4. soumettez votre pull request (qui servira à l'évaluation)
+
+## Réponse
+Q.1a Il faut tester les autres opérations (get et set).
+Q.2b Il est plus sûr mais pas 100% sûr.
+Q.3b Il est impossible de la tester en l'état puisque on ne pourrait pas savoir à quoi équivaudrait un random avec assert, puisqu'il change à chaque run.
