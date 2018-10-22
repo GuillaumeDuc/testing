@@ -64,6 +64,11 @@ Avec Easymock : voir la refcard et les slides du cours.
 4. soumettez votre pull request (qui servira à l'évaluation)
 
 ## Réponse
+
+*Groupe : Dorian Ayllon - Guillaume Ducoeur* 
+
 Q.1a Il faut tester les autres opérations (get et set).
+
 Q.2b Il est plus sûr mais pas 100% sûr.
+
 Q.3b Il est impossible de la tester en l'état puisque on ne pourrait pas savoir à quoi équivaudrait un random avec assert, puisqu'il change à chaque run.
